@@ -74,9 +74,12 @@ export function useAddLesson() {
       if (error) throw error;
       return data as ILesson;
     },
-    onSuccess: () => {
+    onSuccess: (_data, variables) => {
       toast.success('Aula registrada com sucesso!');
       queryClient.invalidateQueries({ queryKey: queryKeys.lessons.all });
+      queryClient.invalidateQueries({ queryKey: queryKeys.students.all });
+      queryClient.invalidateQueries({ queryKey: queryKeys.students.detail(variables.student_id) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.closings.all });
       queryClient.invalidateQueries({ queryKey: ['monthly_totals'] });
       queryClient.invalidateQueries({ queryKey: ['student_monthly_detail'] });
       queryClient.invalidateQueries({ queryKey: ['student_monthly_revenue'] });

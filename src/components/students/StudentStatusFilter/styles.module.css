@@ -1,0 +1,58 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  padding: var(--spacing-3xs);
+  background-color: var(--color-surface-dim);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  padding: var(--spacing-2xs) var(--spacing-sm);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.tab:hover:not(.active) {
+  color: var(--color-text-main);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-focus-outline);
+  outline-offset: 1px;
+}
+
+.tab.active {
+  color: var(--color-primary-contrast);
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-xs);
+}
+
+.count {
+  font-size: var(--font-size-xs);
+  font-variant-numeric: tabular-nums;
+  padding: 1px var(--spacing-2xs);
+  border-radius: var(--radius-full);
+  background-color: rgba(0, 0, 0, 0.08);
+  color: currentColor;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.active .count {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: var(--color-primary-contrast);
+}
