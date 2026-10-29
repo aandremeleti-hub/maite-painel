@@ -1,0 +1,7 @@
+{
+  "name": "web-design-guidelines",
+  "description": "Review UI code for Web Interface Guidelines compliance.",
+  "author": "vercel",
+  "version": "1.0.0",
+  "source": "https://github.com/vercel-labs/agent-skills"
+}

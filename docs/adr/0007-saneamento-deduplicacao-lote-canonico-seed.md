@@ -1,0 +1,3 @@
+# 0007 - Saneamento e Deduplicação Histórica Baseada no Lote Canônico do Seed
+
+Para sanar a duplicação na base de dados de produção (gerada pela execução dupla do conversor da planilha em 07/10/2026), o processo de deduplicação adota como canônico o segundo lote de inserção (19:14), cuja integridade de 180 alunos e 4.834 aulas é 100% idêntica ao arquivo de referência `supabase/seed.sql`. O saneamento é executado em transação atômica que gera tabelas físicas de salvaguarda (`backup_students_pre_dedup` e `backup_lessons_pre_dedup`), realiza a reatribuição e limpeza com bypass temporário das triggers de auditoria e valida a contagem exata prévia ao `COMMIT`, eliminando integralmente as 4.834 aulas e 180 alunos duplicados do lote anterior (17:49).
