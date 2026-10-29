@@ -1,0 +1,96 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2xs);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: var(--radius-full);
+  border-width: var(--border-width-thin);
+  border-style: solid;
+  border-color: transparent;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* Sizes */
+.sm {
+  padding: var(--spacing-3xs) var(--spacing-xs);
+  font-size: var(--font-size-xs);
+}
+
+.md {
+  padding: var(--spacing-2xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+/* Status variants */
+.active {
+  background-color: var(--badge-active-bg);
+  color: var(--badge-active-color);
+  border-color: var(--color-primary-container);
+}
+
+.inactive {
+  background-color: var(--badge-inactive-bg);
+  color: var(--badge-inactive-color);
+  border-color: var(--color-border);
+}
+
+.open {
+  background-color: var(--badge-open-bg);
+  color: var(--badge-open-color);
+  border-color: var(--color-status-info);
+}
+
+.closed {
+  background-color: var(--badge-closed-bg);
+  color: var(--badge-closed-color);
+  border-color: var(--color-border);
+}
+
+/* Category variants */
+.standard {
+  background-color: var(--badge-standard-bg);
+  color: var(--badge-standard-color);
+  border-color: var(--color-primary-container);
+}
+
+.extended {
+  background-color: var(--badge-extended-bg);
+  color: var(--badge-extended-color);
+  border-color: var(--color-secondary-container);
+}
+
+.absence {
+  background-color: var(--badge-absence-bg);
+  color: var(--badge-absence-color);
+  border-color: var(--color-status-warning);
+}
+
+.cancelled {
+  background-color: var(--badge-cancelled-bg);
+  color: var(--badge-cancelled-color);
+  border-color: var(--color-status-error);
+}
+
+.courtesy {
+  background-color: var(--badge-courtesy-bg);
+  color: var(--badge-courtesy-color);
+  border-color: var(--color-secondary);
+}
+
+.NF {
+  background-color: var(--badge-nf-bg);
+  color: var(--badge-nf-color);
+  border-color: var(--color-secondary);
+}
+
+.dot {
+  width: var(--spacing-xs);
+  height: var(--spacing-xs);
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}

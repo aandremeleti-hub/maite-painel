@@ -1,3 +1,23 @@
+export const MONTH_NAMES = [
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro',
+] as const;
+
+export const MONTH_OPTIONS = MONTH_NAMES.map((name, index) => ({
+  value: String(index + 1).padStart(2, '0'),
+  label: name,
+}));
+
 export function formatDateBR(dateStr: string): string {
   if (!dateStr) return '';
   const [year, month, day] = dateStr.split('-');
@@ -5,9 +25,5 @@ export function formatDateBR(dateStr: string): string {
 }
 
 export function getMonthYearLabel(year: number, month: number): string {
-  const months = [
-    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-  ];
-  return `${months[month - 1]} de ${year}`;
+  return `${MONTH_NAMES[month - 1]} de ${year}`;
 }

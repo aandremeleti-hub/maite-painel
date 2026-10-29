@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  background-color: var(--color-surface-card);
+  border-width: var(--border-width-thin);
+  border-style: solid;
+  border-color: var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-text-subtle);
+}
+
+.input:hover:not(:disabled):not(.inputError) {
+  border-color: var(--color-border-hover);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 var(--border-width-thick) var(--color-focus-ring);
+}
+
+.input:disabled {
+  opacity: var(--opacity-disabled);
+  background-color: var(--color-surface-dim);
+  cursor: not-allowed;
+}
+
+.inputError {
+  border-color: var(--color-status-error);
+}
+
+.inputError:focus {
+  border-color: var(--color-status-error);
+  box-shadow: 0 0 0 var(--border-width-thick) var(--color-status-error-bg);
+}
+
+.hasLeftIcon {
+  padding-left: var(--spacing-xl);
+}
+
+.hasRightIcon {
+  padding-right: var(--spacing-xl);
+}
+
+.leftIcon {
+  position: absolute;
+  left: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.rightIcon {
+  position: absolute;
+  right: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.errorMessage {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-status-error);
+  line-height: var(--line-height-normal);
+}
+
+.helperText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}

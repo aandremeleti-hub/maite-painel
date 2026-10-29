@@ -1,0 +1,173 @@
+:root {
+  /* ==========================================================================
+     Colors - Brand Maite
+     ========================================================================== */
+  /* Primary */
+  --color-primary: #1f6965;
+  --color-primary-hover: #185451;
+  --color-primary-container: #84c8c3;
+  --color-primary-contrast: #ffffff;
+
+  /* Secondary */
+  --color-secondary: #6e5673;
+  --color-secondary-hover: #58445c;
+  --color-secondary-container: #f8d8fc;
+  --color-secondary-contrast: #ffffff;
+
+  /* Action */
+  --color-action: #390645;
+  --color-action-contrast: #ffffff;
+
+  /* Neutral Surfaces */
+  --color-surface: #faf9fb;
+  --color-surface-card: #ffffff;
+  --color-surface-dim: #efedf0;
+  --color-border: #dbd9dc;
+  --color-border-hover: #b0adb3;
+
+  /* Typography / Text */
+  --color-text-main: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-subtle: #888888;
+  --color-text-inverse: #ffffff;
+
+  /* Semantic / Status */
+  --color-status-success: #1f6965;
+  --color-status-success-bg: #e6f3f2;
+  --color-status-warning: #b26a00;
+  --color-status-warning-bg: #fff3cd;
+  --color-status-error: #ba1a1a;
+  --color-status-error-hover: #9b1414;
+  --color-status-error-bg: #ffdad6;
+  --color-status-info: #0284c7;
+  --color-status-info-bg: #e0f2fe;
+
+  /* Focus & Backdrop */
+  --color-focus-ring: rgba(31, 105, 101, 0.35);
+  --color-focus-outline: #1f6965;
+  --color-backdrop: rgba(15, 23, 42, 0.45);
+
+  /* Semantic Badges */
+  --badge-active-bg: #e6f3f2;
+  --badge-active-color: #1f6965;
+  --badge-inactive-bg: #efedf0;
+  --badge-inactive-color: #475569;
+  --badge-open-bg: #e0f2fe;
+  --badge-open-color: #0369a1;
+  --badge-closed-bg: #f1f5f9;
+  --badge-closed-color: #64748b;
+
+  --badge-standard-bg: #e6f3f2;
+  --badge-standard-color: #1f6965;
+  --badge-extended-bg: #f8d8fc;
+  --badge-extended-color: #390645;
+  --badge-absence-bg: #fff3cd;
+  --badge-absence-color: #b26a00;
+  --badge-cancelled-bg: #ffdad6;
+  --badge-cancelled-color: #ba1a1a;
+  --badge-courtesy-bg: #ede9fe;
+  --badge-courtesy-color: #5b21b6;
+  --badge-nf-bg: #f3e8ff;
+  --badge-nf-color: #6e5673;
+
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'Lato', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-md: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ==========================================================================
+     Border & Opacity Tokens
+     ========================================================================== */
+  --border-width-thin: 1px;
+  --border-width-thick: 2px;
+  --opacity-disabled: 0.6;
+  --modal-max-width-sm: 420px;
+  --modal-max-width-md: 560px;
+  --modal-max-width-lg: 760px;
+  --modal-max-height: 90vh;
+  --blur-sm: 4px;
+  --sidebar-width: 260px;
+  --topbar-height: 64px;
+  --select-month-width: 130px;
+  --select-year-width: 90px;
+
+  /* ==========================================================================
+     Spacing
+     ========================================================================== */
+  --spacing-3xs: 2px;
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* ==========================================================================
+     Border Radius
+     ========================================================================== */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Shadows
+     ========================================================================== */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.1), 0 1px 2px -1px rgba(15, 23, 42, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+
+  /* ==========================================================================
+     Z-Index Scale
+     ========================================================================== */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* ==========================================================================
+     Transitions & Animations
+     ========================================================================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ==========================================================================
+     Breakpoints (Reference)
+     ========================================================================== */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}

@@ -1,0 +1,105 @@
+.topBar {
+  position: sticky;
+  top: 0;
+  height: var(--topbar-height);
+  background-color: var(--color-surface-card);
+  border-bottom-width: var(--border-width-thin);
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+  gap: var(--spacing-md);
+  z-index: var(--z-sticky);
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-width: 0;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: var(--spacing-2xs);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.menuButton:hover {
+  color: var(--color-text-main);
+  background-color: var(--color-surface-dim);
+}
+
+.menuIcon {
+  width: var(--spacing-lg);
+  height: var(--spacing-lg);
+}
+
+.greeting {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.filterControls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dateSelectors {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.selectMonthWrapper {
+  width: var(--select-month-width);
+}
+
+.selectYearWrapper {
+  width: var(--select-year-width);
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xs) var(--spacing-xs);
+}
+
+.chevronIcon {
+  width: var(--spacing-md);
+  height: var(--spacing-md);
+}
+
+.badgeWrapper {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .badgeWrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menuButton {
+    display: none;
+  }
+}

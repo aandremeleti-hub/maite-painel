@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  background-color: var(--color-surface-card);
+  border-width: var(--border-width-thin);
+  border-style: solid;
+  border-color: var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-xs) var(--spacing-sm);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.select:hover:not(:disabled):not(.selectError) {
+  border-color: var(--color-border-hover);
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 var(--border-width-thick) var(--color-focus-ring);
+}
+
+.select:disabled {
+  opacity: var(--opacity-disabled);
+  background-color: var(--color-surface-dim);
+  cursor: not-allowed;
+}
+
+.selectError {
+  border-color: var(--color-status-error);
+}
+
+.selectError:focus {
+  border-color: var(--color-status-error);
+  box-shadow: 0 0 0 var(--border-width-thick) var(--color-status-error-bg);
+}
+
+.chevron {
+  position: absolute;
+  right: var(--spacing-sm);
+  pointer-events: none;
+  color: var(--color-text-muted);
+  width: var(--font-size-md);
+  height: var(--font-size-md);
+}
+
+.errorMessage {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-status-error);
+  line-height: var(--line-height-normal);
+}
+
+.helperText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
