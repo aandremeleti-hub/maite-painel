@@ -100,3 +100,14 @@ ALTER TABLE public.students ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.lessons ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.monthly_closings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.payment_info ENABLE ROW LEVEL SECURITY;
+
+-- ==============================================================================
+-- 4. PROCEDURES & TRIGGERS DO CICLO DE VIDA DO ALUNO (Fase 3 - ADR 0006)
+-- ==============================================================================
+
+-- Sincronização periódica dos 90 dias sem aulas ou novos cadastros sem aulas
+-- public.fn_sync_inactive_students(p_owner_id UUID) RETURNS INTEGER (ver supabase/functions.sql)
+
+-- Reativação atômica BEFORE INSERT ON public.lessons
+-- public.trg_reactivate_student_on_lesson (ver supabase/triggers.sql)
+

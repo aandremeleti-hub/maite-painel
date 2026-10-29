@@ -209,3 +209,60 @@ BEGIN
   END IF;
 END;
 $$;
+
+-- ------------------------------------------------------------------------------
+-- 6. fn_sync_inactive_students
+-- Sincroniza o ciclo de vida dos alunos (regra dos 90 dias sem aulas ou cadastro antigo)
+-- Idempotente e segura contra IDOR / injection via search_path restrito
+-- ------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.fn_sync_inactive_students(
+  p_owner_id UUID
+) RETURNS INTEGER
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public, pg_temp
+AS $$
+DECLARE
+  v_caller_id UUID := auth.uid();
+  v_updated_count INTEGER := 0;
+BEGIN
+  -- Validação de segurança: previne IDOR exigindo compatibilidade com auth.uid()
+  -- Permite execução direta por superuser/service_role em rotinas de manutenção
+  IF v_caller_id IS NOT NULL AND p_owner_id IS DISTINCT FROM v_caller_id THEN
+    RAISE EXCEPTION 'Acesso não autorizado: owner_id divergente do usuário autenticado.';
+  ELSIF v_caller_id IS NULL AND (SELECT current_user) NOT IN ('postgres', 'service_role') THEN
+    RAISE EXCEPTION 'Acesso não autorizado: credenciais ausentes.';
+  END IF;
+
+  WITH candidates AS (
+    SELECT s.id
+    FROM public.students s
+    LEFT JOIN (
+      SELECT student_id, MAX(lesson_date) AS max_lesson_date
+      FROM public.lessons
+      GROUP BY student_id
+    ) l ON l.student_id = s.id
+    WHERE s.owner_id = p_owner_id
+      AND s.status = 'active'
+      AND (
+        (l.max_lesson_date IS NOT NULL AND l.max_lesson_date < CURRENT_DATE - INTERVAL '90 days')
+        OR
+        (l.max_lesson_date IS NULL AND s.created_at < NOW() - INTERVAL '90 days')
+      )
+  )
+  UPDATE public.students s
+  SET 
+    status = 'inactive',
+    updated_at = NOW()
+  FROM candidates c
+  WHERE s.id = c.id;
+
+  GET DIAGNOSTICS v_updated_count = ROW_COUNT;
+
+  RETURN v_updated_count;
+END;
+$$;
+
+GRANT EXECUTE ON FUNCTION public.fn_sync_inactive_students(UUID) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.fn_sync_inactive_students(UUID) TO service_role;
+

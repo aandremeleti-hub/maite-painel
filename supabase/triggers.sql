@@ -116,3 +116,41 @@ CREATE TRIGGER trg_check_closed_month_lessons
   BEFORE INSERT OR UPDATE OR DELETE ON public.lessons
   FOR EACH ROW
   EXECUTE FUNCTION public.fn_check_closed_month();
+
+-- ------------------------------------------------------------------------------
+-- 4. trg_reactivate_student_on_lesson (Reativação Automática de Aluno)
+-- Reativa instantaneamente o aluno para 'active' se uma nova aula for inserida
+-- para ele, garantindo atomicidade transacional e reatividade zero atrito
+-- ------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.fn_reactivate_student_on_lesson()
+RETURNS TRIGGER
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public, pg_temp
+AS $$
+DECLARE
+  v_student_status TEXT;
+BEGIN
+  -- Consulta o status cadastral atual do aluno
+  SELECT status INTO v_student_status
+  FROM public.students
+  WHERE id = NEW.student_id;
+
+  -- Se estiver inativo, reativa imediatamente para active
+  IF v_student_status = 'inactive' THEN
+    UPDATE public.students
+    SET status = 'active',
+        updated_at = NOW()
+    WHERE id = NEW.student_id;
+  END IF;
+
+  RETURN NEW;
+END;
+$$;
+
+DROP TRIGGER IF EXISTS trg_reactivate_student_on_lesson ON public.lessons;
+CREATE TRIGGER trg_reactivate_student_on_lesson
+  BEFORE INSERT ON public.lessons
+  FOR EACH ROW
+  EXECUTE FUNCTION public.fn_reactivate_student_on_lesson();
+
