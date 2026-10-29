@@ -1,0 +1,129 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  background-color: var(--color-surface-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-tight);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast);
+}
+
+/* Variantes de Fundo Tonal do Ícone */
+.variant_primary .iconWrapper {
+  background-color: var(--color-status-success-bg);
+  color: var(--color-primary);
+}
+
+.variant_secondary .iconWrapper {
+  background-color: var(--color-secondary-container);
+  color: var(--color-action);
+}
+
+.variant_neutral .iconWrapper {
+  background-color: var(--color-surface-dim);
+  color: var(--color-text-muted);
+}
+
+.variant_success .iconWrapper {
+  background-color: var(--color-status-success-bg);
+  color: var(--color-status-success);
+}
+
+.variant_warning .iconWrapper {
+  background-color: var(--color-status-warning-bg);
+  color: var(--color-status-warning);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xs);
+}
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.value {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  line-height: var(--line-height-tight);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.badgeWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-subtle);
+  line-height: var(--line-height-normal);
+  margin-top: var(--spacing-3xs);
+}
+
+/* Skeleton Loading Shimmer */
+.skeletonValue {
+  height: 28px;
+  width: 65%;
+  background: linear-gradient(90deg, var(--color-surface-dim) 25%, #e6e4e8 50%, var(--color-surface-dim) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+  margin: var(--spacing-2xs) 0;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

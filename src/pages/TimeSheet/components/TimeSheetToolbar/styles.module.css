@@ -1,0 +1,89 @@
+/* ==========================================================================
+   TimeSheetToolbar - Estilos da barra de controle e exportação
+   Em conformidade estrita com o padrão STARTMEDIA (< 200 linhas)
+   ========================================================================== */
+
+.toolbarCard {
+  background-color: var(--color-surface-card, #ffffff);
+  border: 1px solid var(--color-border, #dbd9dc);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-md, 16px);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 16px);
+}
+
+.controlsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spacing-md, 16px);
+}
+
+.studentSelectorGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--spacing-md, 16px);
+  flex: 1;
+  min-width: 280px;
+}
+
+.selectWrapper {
+  flex: 1;
+  min-width: 240px;
+  max-width: 400px;
+}
+
+.competenceWrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.actionsGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs, 8px);
+}
+
+.warningBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 8px);
+  background-color: var(--color-status-warning-bg, #fff3cd);
+  color: var(--color-status-warning, #b26a00);
+  border: 1px solid #ffeeba;
+  border-radius: var(--radius-md, 8px);
+  padding: 10px 14px;
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+.warningIcon {
+  flex-shrink: 0;
+  color: var(--color-status-warning, #b26a00);
+}
+
+.warningText {
+  flex: 1;
+}
+
+.warningLink {
+  color: var(--color-status-warning, #b26a00);
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.warningLink:hover {
+  color: #8c5200;
+}
+
+@media print {
+  .toolbarCard {
+    display: none !important;
+  }
+}

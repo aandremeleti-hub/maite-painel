@@ -1,0 +1,178 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.lockBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-status-warning-bg);
+  border: var(--border-width-thin) solid var(--color-status-warning);
+  border-radius: var(--radius-md);
+  color: var(--color-status-warning);
+}
+
+.lockIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.lockContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xs);
+}
+
+.lockTitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+.lockMessage {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+  color: #78350f;
+}
+
+.studentSelectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.inactiveBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-status-info-bg);
+  border: var(--border-width-thin) solid var(--color-status-info);
+  border-radius: var(--radius-md);
+  color: var(--color-status-info);
+}
+
+.inactiveBannerIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.inactiveBannerText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+  color: var(--badge-open-color);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 560px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+}
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-surface-dim);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkboxInput {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.checkboxHint {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-subtle);
+  margin-left: 24px;
+}
+
+.textareaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xs);
+}
+
+.textareaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textareaLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
+
+.charCounter {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  background-color: var(--color-surface-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-focus-outline);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.textarea:disabled {
+  opacity: var(--opacity-disabled);
+  background-color: var(--color-surface-dim);
+  cursor: not-allowed;
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  width: 100%;
+}

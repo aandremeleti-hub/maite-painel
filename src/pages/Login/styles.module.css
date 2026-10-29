@@ -1,0 +1,172 @@
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  background-image: radial-gradient(
+    circle at 50% 20%,
+    rgba(132, 200, 195, 0.15) 0%,
+    transparent 60%
+  );
+  font-family: var(--font-body);
+}
+
+.loginCard {
+  width: 100%;
+  max-width: var(--modal-max-width-sm);
+  background-color: var(--color-surface-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brandHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
+}
+
+.brandEmblem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-md);
+}
+
+.brandTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xs);
+}
+
+.brandTitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.brandSubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+.welcomeText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+.alertError {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--color-status-error-bg);
+  border: var(--border-width-thin) solid var(--color-status-error);
+  color: var(--color-status-error);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.alertIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: var(--spacing-3xs);
+}
+
+.alertText {
+  margin: 0;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.fieldIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-subtle);
+}
+
+.togglePasswordButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: var(--spacing-3xs);
+  cursor: pointer;
+  color: var(--color-text-subtle);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.togglePasswordButton:hover {
+  color: var(--color-text-main);
+}
+
+.togglePasswordButton:focus-visible {
+  outline: var(--border-width-thick) solid var(--color-focus-outline);
+  outline-offset: 1px;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: var(--spacing-xs);
+}
+
+.footerNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-subtle);
+  padding-top: var(--spacing-xs);
+  border-top: var(--border-width-thin) solid var(--color-surface-dim);
+}
+
+.footerIcon {
+  width: 14px;
+  height: 14px;
+}

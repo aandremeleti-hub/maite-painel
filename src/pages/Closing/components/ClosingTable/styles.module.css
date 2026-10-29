@@ -1,0 +1,114 @@
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.counterText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.counterText strong {
+  color: var(--color-text-main);
+  font-weight: var(--font-weight-bold);
+}
+
+.batchActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.rowsList {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background-color: var(--color-surface-card);
+  border: var(--border-width-thin) dashed var(--color-border-hover);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.emptyIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-dim);
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyIcon {
+  color: var(--color-text-subtle);
+}
+
+.emptyTitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-xs);
+}
+
+.emptyDescription {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  max-width: 440px;
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Skeleton Loading */
+.skeletonHeader {
+  height: 44px;
+  background-color: var(--color-surface-dim);
+  border-radius: var(--radius-md);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.skeletonRow {
+  height: 58px;
+  background-color: var(--color-surface-card);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-md);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

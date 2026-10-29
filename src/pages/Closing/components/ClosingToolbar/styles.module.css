@@ -1,0 +1,66 @@
+.toolbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.searchArea {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 420px;
+}
+
+.clearButton {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--color-text-subtle);
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.clearButton:hover {
+  color: var(--color-text-main);
+  background-color: var(--color-surface-dim);
+}
+
+.clearButton:focus-visible {
+  outline: 2px solid var(--color-focus-outline);
+  outline-offset: 2px;
+}
+
+.actionsGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .toolbarContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchArea {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .actionsGroup {
+    justify-content: flex-end;
+  }
+}
